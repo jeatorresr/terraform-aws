@@ -7,7 +7,6 @@ trigger:
 variables:
   # Terraform settings
   terraformWorkingDirectory: '$(System.DefaultWorkingDirectory)/ecr/ecr_exercise'
-  terraformVersion: '1.4.6'
 
 stages:
   - stage: TerraformContinuousIntegration
@@ -17,7 +16,7 @@ stages:
       displayName: install_tf
       pool: taller-agent
       steps:
-      - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
+      - task: TerraformTaskV4@0
         displayName: 'Install Terraform'
         inputs:
-          terraformVersion: $(terraformVersion)
+          terraformVersion: 'latest'
