@@ -18,5 +18,4 @@ stages:
       steps:
       - task: TerraformTaskV4@0
         displayName: 'Install Terraform'
-        inputs:
-          terraformVersion: 'latest'
+        version: 'latest'
