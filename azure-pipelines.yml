@@ -28,10 +28,11 @@ stages:
         inputs:
           provider: aws
           command: validate
+          workingDirectory: '$(System.DefaultWorkingDirectory)/ecr/ecr_exercise'
       - task: TerraformTaskV4@4
-        displayName: 'terraform plan'
         inputs:
-          provider: aws
-          command: plan
+          provider: 'aws'
+          command: 'plan'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/ecr/ecr_exercise'
           environmentServiceNameAWS: 'aws_terraform'
           
