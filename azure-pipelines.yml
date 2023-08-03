@@ -24,11 +24,6 @@ stages:
           backendAWSBucketName: 'backend-tfstate-aws'
           backendAWSKey: test.tfstate
       - task: TerraformTaskV4@4
-        displayName: 'terraform fmt'
-        inputs:
-          provider: aws
-          command: fmt        
-      - task: TerraformTaskV4@4
         displayName: 'terraform validate'
         inputs:
           provider: aws
