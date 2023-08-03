@@ -16,7 +16,7 @@ stages:
       displayName: install_tf
       pool: taller-agent
       steps:
-      - task: TerraformInstallerV0
+      - task: TerraformInstallerV0@0
         displayName: install terraform
         inputs:
           terraformVersion: latest
