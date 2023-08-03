@@ -22,5 +22,21 @@ stages:
           provider: aws
           backendServiceAWS: 'aws_terraform'
           backendAWSBucketName: 'backend-tfstate-aws'
-          backendAWSKey: ecr.tfstate
-
+          backendAWSKey: test.tfstate
+      - task: terraform fmt
+        displayName: 'terraform fmt'
+        inputs:
+          provider: aws
+          command: fmt        
+      - task: terraform validate
+        displayName: 'terraform validate'
+        inputs:
+          provider: aws
+          command: validate
+      - task: terraform plan
+        displayName: 'terraform plan'
+        inputs:
+          provider: aws
+          command: plan
+          environmentServiceNameAWS: 'aws_terraform'
+          
