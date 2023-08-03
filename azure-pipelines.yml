@@ -19,9 +19,8 @@ stages:
       - task: TerraformTaskV4@4
         displayName: Initialize Terraform
         inputs:
-          provider: 'aws'
-          command: 'init'
-          awsCredentials: aws_terraform
-          s3BucketName: examplebucket1-azure
-          s3ObjectKey: 'ecr-terraform.tfstate'
+          provider: aws
+          backendServiceAWS: 'aws_terraform'
+          backendAWSBucketName: 'backend-tfstate-aws'
+          backendAWSKey: ecr.tfstate
 
