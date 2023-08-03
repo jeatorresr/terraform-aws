@@ -13,7 +13,7 @@ stages:
     displayName: Terraform Module - CI
     jobs:
     - job: Install
-      displayName: install_tf
+      displayName: Terraform
       pool: taller-agent
       steps:
       - task: TerraformTaskV4@4
@@ -23,6 +23,7 @@ stages:
           backendServiceAWS: 'aws_terraform'
           backendAWSBucketName: 'backend-tfstate-aws'
           backendAWSKey: test.tfstate
+          workingDirectory: '$(System.DefaultWorkingDirectory)/ecr/ecr_exercise'
       - task: TerraformTaskV4@4
         displayName: 'terraform validate'
         inputs:
