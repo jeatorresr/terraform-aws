@@ -7,7 +7,7 @@ data "aws_caller_identity" "current" {}
 
 module "ecr_test" {
 
-  source = "../../"
+  source = "../"
 
   providers = {
     aws = aws.virginia
